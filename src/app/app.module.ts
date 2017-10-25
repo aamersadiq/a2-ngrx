@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './layouts/app-root/app.component';
+import { AppComponent } from './layouts';
 
 @NgModule({
   declarations: [
