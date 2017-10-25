@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -11,8 +10,7 @@ import { OrderComponent } from './order.component';
     OrderComponent
   ],
   imports: [
-    routing,
-    BrowserModule
+    routing
   ],
   providers: [],
 })

@@ -1,12 +1,12 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, NoPreloading } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
-    // {
-    //     path: 'orders',
-    //     component: OrderComponent,
-    //     data: { title: 'Orders' }
-    // },
+    {
+        path: 'orders',
+        loadChildren: 'app/order/order.module#OrderModule',
+        data: { title: 'Orders' }
+    },
     {
         path: '',
         redirectTo: '/customers',
@@ -15,4 +15,6 @@ export const routes: Routes = [
     // { path: '**', component: PageNotFoundComponent }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {
+    preloadingStrategy: NoPreloading
+  });

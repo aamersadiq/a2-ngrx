@@ -5,10 +5,10 @@ import { OrderComponent } from './order.component';
 
 export const routes: Routes = [
     {
-        path: 'orders',
+        path: '',
         component: OrderComponent,
         data: { title: 'Orders' }
     }
   ];
 
-  export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+  export const routing: ModuleWithProviders = RouterModule.forChild(routes);
