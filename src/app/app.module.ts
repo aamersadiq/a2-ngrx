@@ -3,22 +3,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './layouts';
-import { appRoutes } from './app.route'
-import { CustomerComponent } from './customer/customer.component';
+import { routing } from './app.route'
 import { OrderComponent } from './order/order.component';
+import { CustomerModule } from './customer' 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent,
     OrderComponent
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
-    BrowserModule
+    routing,
+    BrowserModule,
+    CustomerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
