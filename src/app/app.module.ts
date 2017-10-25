@@ -11,7 +11,6 @@ import reducer from './reducers';
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
 import { CustomerModule } from './customer' 
-import { OrderModule } from './order' 
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { OrderModule } from './order'
     routing,
     BrowserModule,
     CustomerModule,
-    OrderModule,
     // StoreModule.provideStore(reducer),
     // StoreDevtoolsModule.instrumentStore({
     //   monitor: useLogMonitor({
