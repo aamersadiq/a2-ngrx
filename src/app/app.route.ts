@@ -3,13 +3,13 @@ import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
     {
-        path: 'orders',
-        loadChildren: 'app/order/order.module#OrderModule',
-        data: { title: 'Orders' }
+        path: 'matters',
+        loadChildren: 'app/matter/matter.module#MatterModule',
+        data: { title: 'Matters' }
     },
     {
         path: '',
-        redirectTo: '/customers',
+        redirectTo: '/persons',
         pathMatch: 'full'
     },
     // { path: '**', component: PageNotFoundComponent }

@@ -7,12 +7,12 @@ import { storeLogger } from 'ngrx-store-logger';
 // import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
-import customerReducer, * as fromCustomer from '../customer/reducers';
+import personReducer, * as fromPerson from '../person/reducers';
 
 export interface AppState {
-    customers: fromCustomer.CustomerState;
+    persons: fromPerson.PersonState;
 }
 
 export default compose( combineReducers)({//storeFreeze, storeLogger(),
-    customer: customerReducer,
+    person: personReducer,
 });

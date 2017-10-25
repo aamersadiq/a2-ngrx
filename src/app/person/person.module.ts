@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { routing } from './order.route'
-import { OrderComponent } from './order.component';
+import { routing } from './person.route'
+import { PersonComponent } from './person.component';
 
 
 @NgModule({
   declarations: [
-    OrderComponent
+    PersonComponent
   ],
   imports: [
     routing
   ],
   providers: [],
 })
-export class OrderModule { }
+export class PersonModule { }

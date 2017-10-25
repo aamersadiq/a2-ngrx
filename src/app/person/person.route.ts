@@ -1,13 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
-import { CustomerComponent } from './customer.component';
+import { PersonComponent } from './person.component';
 
 export const routes: Routes = [
     {
-        path: 'customers',
-        component: CustomerComponent,
-        data: { title: 'Customers' }
+        path: 'persons',
+        component: PersonComponent,
+        data: { title: 'Persons' }
     }
   ];
 
