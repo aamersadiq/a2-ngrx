@@ -5,11 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './layouts';
 import { appRoutes } from './app.route'
 import { CustomerComponent } from './customer/customer.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent
+    CustomerComponent,
+    OrderComponent
   ],
   imports: [
     RouterModule.forRoot(
