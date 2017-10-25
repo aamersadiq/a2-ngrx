@@ -1,15 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
-import { CustomerComponent } from './customer/customer.component';
-import { OrderComponent } from './order/order.component';
-
 export const routes: Routes = [
-    {
-        path: 'orders',
-        component: OrderComponent,
-        data: { title: 'Orders' }
-    },
+    // {
+    //     path: 'orders',
+    //     component: OrderComponent,
+    //     data: { title: 'Orders' }
+    // },
     {
         path: '',
         redirectTo: '/customers',

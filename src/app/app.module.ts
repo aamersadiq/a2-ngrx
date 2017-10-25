@@ -4,18 +4,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
-import { OrderComponent } from './order/order.component';
 import { CustomerModule } from './customer' 
+import { OrderModule } from './order' 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    OrderComponent
+    AppComponent
   ],
   imports: [
     routing,
     BrowserModule,
-    CustomerModule
+    CustomerModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
