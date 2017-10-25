@@ -1,42 +1,48 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Common
+node_modules/
+bower_components/
+dist/
+report/
+snippets/
+logs/*
+*.log
+*.map
 
-# compiled output
-/dist
-/tmp
-/out-tsc
+# Project specific
+typings/
+!*.spec.js
+!**/test-helpers/**/*
+!**/src/typings/*.d.ts
+stats.json
 
-# dependencies
-/node_modules
+## Bank Reconciliation
+bank-reconciliation/typings/
+bank-reconciliation/src/**/*.js
+!bank-reconciliation/src/**/*.spec.js
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
+# Visual Studio
 .settings/
-*.sublime-workspace
+.ntvs_analysis.dat
+.vs/config/applicationhost.config
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# Visual Studio Code
+.vscode/
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
+# JetBrains
+.idea/
+.idea_modules/
+/out/
+*.iml
 
-# e2e
-/e2e/*.js
-/e2e/*.map
+# File-based project format
+*.ipr
+*.iws
 
-# System Files
-.DS_Store
-Thumbs.db
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+
