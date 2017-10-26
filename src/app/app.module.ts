@@ -21,7 +21,7 @@ import { PersonModule } from './person'
     routing,
     BrowserModule,
     PersonModule,
-    // StoreModule.provideStore(reducer),
+    StoreModule.provideStore(reducer),
     // StoreDevtoolsModule.instrumentStore({
     //   monitor: useLogMonitor({
     //     position: 'right',

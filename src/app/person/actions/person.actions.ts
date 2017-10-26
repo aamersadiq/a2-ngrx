@@ -2,6 +2,13 @@ import { Action } from '@ngrx/store';
 
 export class PersonActions {
     
+      static INCREMENT_COUNTER = '[Person] Increment Counter';
+      public incrementCounter(): Action {
+        return {
+          type: PersonActions.INCREMENT_COUNTER
+        };
+      }
+      
       static LOAD_CUSTOMER_LIST = '[Person] Load Person List';
       loadPersonList(): Action {
         return {
