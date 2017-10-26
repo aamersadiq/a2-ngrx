@@ -1,11 +1,11 @@
 import { combineReducers, Action, ActionReducer } from '@ngrx/store';
 
-import personReducer, * as fromPerson from './people.reducers';
+import peopleReducer, * as fromPeople from './people.reducers';
 
 export interface PersonState {
-    people: fromPerson.PeopleState;
+    people: fromPeople.PeopleState;
 }
 
 export default combineReducers({
-    people: personReducer
+    people: peopleReducer
 });
