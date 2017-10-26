@@ -23,7 +23,7 @@ export default (state = initialState, action: Action): PeopleState => {
             return Object.assign({}, state, { counter: newCount });
         }
 
-        case PersonActions.LOAD_CUSTOMER_LIST_SUCCESS: {
+        case PersonActions.LOAD_PERSON_LIST_SUCCESS: {
             const persons: any[] = action.payload;
 
             return Object.assign({}, state, {
@@ -32,7 +32,7 @@ export default (state = initialState, action: Action): PeopleState => {
             });
         }
 
-        case PersonActions.LOAD_CUSTOMER_LIST: {
+        case PersonActions.LOAD_PERSON_LIST: {
             return Object.assign({}, state, { loading: true });
         }
 
@@ -47,11 +47,11 @@ export default (state = initialState, action: Action): PeopleState => {
 // export default (state = initialState, action: Action) : ActionReducer<PersonsState>=> {
 //     switch (action.type) {
 
-//         case PersonActions.LOAD_CUSTOMER_LIST: {
+//         case PersonActions.LOAD_PERSON_LIST: {
 //             return Object.assign({}, state, { loading: true });
 //         }
 
-//         case PersonActions.LOAD_CUSTOMER_LIST_SUCCESS: {
+//         case PersonActions.LOAD_PERSON_LIST_SUCCESS: {
 //             const persons: any[] = action.payload;
 
 //             return Object.assign({}, state, {

@@ -11,24 +11,24 @@ export class PersonActions {
         };
       }
       
-      static LOAD_CUSTOMER_LIST = '[Person] Load Person List';
+      static LOAD_PERSON_LIST = '[Person] Load Person List';
       loadPersonList(): Action {
         return {
-          type: PersonActions.LOAD_CUSTOMER_LIST
+          type: PersonActions.LOAD_PERSON_LIST
         };
       }
       
-      static LOAD_CUSTOMER_LIST_SUCCESS = '[Person] Load Person List Success';
+      static LOAD_PERSON_LIST_SUCCESS = '[Person] Load Person List Success';
       loadPersonListSuccessfull(data: any[]): Action {
         return {
-          type: PersonActions.LOAD_CUSTOMER_LIST_SUCCESS,
+          type: PersonActions.LOAD_PERSON_LIST_SUCCESS,
           payload: data
         };
       }
-      static LOAD_CUSTOMER_LIST_ERROR = '[Person] Load Person List Error';
+      static LOAD_PERSON_LIST_ERROR = '[Person] Load Person List Error';
       loadPersonListError(error): Action {
         return {
-          type: PersonActions.LOAD_CUSTOMER_LIST_ERROR,
+          type: PersonActions.LOAD_PERSON_LIST_ERROR,
           payload: error
         };
       }
