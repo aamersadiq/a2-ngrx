@@ -2,19 +2,19 @@ import { Action, ActionReducer } from '@ngrx/store';
 
 import { PersonActions } from '../actions';
 
-export interface PersonsState {
+export interface PeopleState {
     entities: Person[];
     loading: boolean;
     counter: number;
 }
 
-const initialState: PersonsState = {
+const initialState: PeopleState = {
     entities: [],
     loading: true,
     counter: 0
 };
 
-export default (state = initialState, action: Action): PersonsState => {
+export default (state = initialState, action: Action): PeopleState => {
     switch (action.type) {
 
         case PersonActions.INCREMENT_COUNTER: {
