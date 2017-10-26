@@ -22,7 +22,7 @@ export class PersonComponent implements OnInit, OnDestroy {
   }
 
   increment() {
-    this.store.dispatch(this.personActions.incrementCounter());
+    this.store.dispatch(this.personActions.loadPersonList());
   }
 
   ngOnInit() {
