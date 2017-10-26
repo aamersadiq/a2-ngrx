@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { routing } from './person.route'
 import { PersonComponent } from './person.component';
+import actions from './actions';
 
 
 @NgModule({
@@ -12,6 +13,8 @@ import { PersonComponent } from './person.component';
   imports: [
     routing
   ],
-  providers: [],
+  providers: [
+    actions
+  ],
 })
 export class PersonModule { }

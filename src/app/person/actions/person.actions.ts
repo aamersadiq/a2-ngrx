@@ -1,5 +1,7 @@
 import { Action } from '@ngrx/store';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class PersonActions {
     
       static INCREMENT_COUNTER = '[Person] Increment Counter';

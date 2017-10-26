@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import * as actions from './actions';
+import { PersonActions } from './actions';
 import { AppState } from '../reducers'
 
 @Component({
@@ -15,13 +15,14 @@ import { AppState } from '../reducers'
 export class PersonComponent implements OnInit, OnDestroy {
   people$: Observable<any>;
   subscribion: Subscription;
-  constructor(private store: Store<AppState>) {
+  constructor(
+    private personActions: PersonActions,
+    private store: Store<AppState>) {
 
   }
 
   increment() {
-    let pa = new actions.PersonActions();
-    this.store.dispatch(pa.incrementCounter());
+    this.store.dispatch(this.personActions.incrementCounter());
   }
 
   ngOnInit() {
