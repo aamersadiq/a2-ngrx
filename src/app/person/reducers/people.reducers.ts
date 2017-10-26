@@ -27,13 +27,13 @@ export default (state = initialState, action: Action): PeopleState => {
             const persons: any[] = action.payload;
 
             return Object.assign({}, state, {
-                entities: Object.assign({}, state.entities, persons),
+                entities: [...state.entities, ...persons],
                 loading: false
             });
         }
 
         case PersonActions.LOAD_PERSON_LIST: {
-            return Object.assign({}, state, { loading: true });
+            return state;
         }
 
         default: {

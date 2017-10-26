@@ -23,6 +23,11 @@ export class PeopleEffects {
               id: 1,
               firstName: 'John',
               lastName: 'T'
+          },
+          {
+              id: 2,
+              firstName: 'Mary',
+              lastName: 'T'
           }
       ])
     //   this.http.post('/auth', action.payload)

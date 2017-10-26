@@ -1,4 +1,4 @@
-<p>
-    <button (click)="increment()">Increment</button>
-  person works!
-</p>
+<!-- <app-person-list [people]="people$"></app-person-list> -->
+<li *ngFor="let person of people$ | async">
+    <span class="badge">{{person.id}}</span>: {{person.firstName}} {{person.lastName}} 
+  </li>

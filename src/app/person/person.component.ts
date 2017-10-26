@@ -1,3 +1,4 @@
+import { PersonState } from './reducers/index';
 import { subscribeOn } from 'rxjs/operators/subscribeOn';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -15,19 +16,17 @@ import { AppState } from '../reducers'
 export class PersonComponent implements OnInit, OnDestroy {
   people$: Observable<any>;
   subscribion: Subscription;
+  pp: any[];
   constructor(
     private personActions: PersonActions,
     private store: Store<AppState>) {
-
-  }
-
-  increment() {
-    this.store.dispatch(this.personActions.loadPersonList());
   }
 
   ngOnInit() {
-    this.people$ = this.store.select(state => state.person);
-    this.subscribion = this.people$.subscribe((p) => console.log('peo', p));
+    this.pp = [{id:1, firstName: 'J'}, {id:2, firstName: 'T'}];
+    this.people$ = this.store.select(state => state.person)
+    .map((data: any) => data.people.entities);
+    this.store.dispatch(this.personActions.loadPersonList());
   }
 
   ngOnDestroy() {
