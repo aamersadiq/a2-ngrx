@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routing } from './author.route'
 import { AuthorComponent } from './author.component';
 import { AuthorListComponent } from './author-list//author-list.component';
+import { AuthorSearchComponent } from './author-search/author-search.component';
 import { AuthorActions} from './actions/';
 import { PeopleEffects} from './effects/';
 
@@ -13,7 +14,8 @@ import { PeopleEffects} from './effects/';
 @NgModule({
   declarations: [
     AuthorComponent,
-    AuthorListComponent
+    AuthorListComponent,
+    AuthorSearchComponent
   ],
   imports: [
     BrowserModule,
