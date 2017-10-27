@@ -1290,7 +1290,7 @@ cssesc@^0.1.0:
     postcss-minify-selectors "^2.0.4"
     postcss-normalize-charset "^1.1.0"
     postcss-normalize-url "^3.0.7"
-    postcss-mattered-values "^2.1.0"
+    postcss-courseed-values "^2.1.0"
     postcss-reduce-idents "^2.2.2"
     postcss-reduce-initial "^1.0.0"
     postcss-reduce-transforms "^1.0.3"
@@ -4008,9 +4008,9 @@ postcss-normalize-url@^3.0.7:
     postcss "^5.0.14"
     postcss-value-parser "^3.2.3"
 
-postcss-mattered-values@^2.1.0:
+postcss-courseed-values@^2.1.0:
   version "2.2.3"
-  resolved "https://registry.yarnpkg.com/postcss-mattered-values/-/postcss-mattered-values-2.2.3.tgz#eec6c2a67b6c412a8db2042e77fe8da43f95c11d"
+  resolved "https://registry.yarnpkg.com/postcss-courseed-values/-/postcss-courseed-values-2.2.3.tgz#eec6c2a67b6c412a8db2042e77fe8da43f95c11d"
   dependencies:
     postcss "^5.0.4"
     postcss-value-parser "^3.0.1"

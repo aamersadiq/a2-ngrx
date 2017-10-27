@@ -3,12 +3,12 @@ import { storeLogger } from 'ngrx-store-logger';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
-import personReducer, * as fromPerson from '../person/reducers';
+import authorReducer, * as fromAuthor from '../author/reducers';
 
 export interface AppState {
-    person: fromPerson.PersonState;
+    author: fromAuthor.AuthorState;
 }
 
 export default compose(storeFreeze, storeLogger(),combineReducers)({
-    person: personReducer
+    author: authorReducer
 });

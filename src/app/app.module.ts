@@ -10,7 +10,7 @@ import reducer from './reducers';
 
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
-import { PersonModule } from './person' 
+import { AuthorModule } from './author' 
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { PersonModule } from './person'
   imports: [
     routing,
     BrowserModule,
-    PersonModule,
+    AuthorModule,
     StoreModule.provideStore(reducer),
     // StoreDevtoolsModule.instrumentStore({
     //   monitor: useLogMonitor({

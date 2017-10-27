@@ -30,10 +30,10 @@
       140
     ],
     "member-access": false,
-    "member-mattering": [
+    "member-courseing": [
       true,
       {
-        "matter": [
+        "course": [
           "static-field",
           "instance-field",
           "static-method",

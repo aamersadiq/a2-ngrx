@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { routing } from './matter.route'
-import { MatterComponent } from './matter.component';
+import { routing } from './course.route'
+import { CourseComponent } from './course.component';
 
 
 @NgModule({
   declarations: [
-    MatterComponent
+    CourseComponent
   ],
   imports: [
     routing
   ],
   providers: [],
 })
-export class MatterModule { }
+export class CourseModule { }

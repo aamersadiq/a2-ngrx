@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
-import { PersonActions } from '../actions';
+import { AuthorActions } from '../actions';
 
 @Injectable()
 export class PeopleEffects {
@@ -16,7 +16,7 @@ export class PeopleEffects {
       private actions$: Actions
     ) {}      
 
-  @Effect() loadPersons$: Observable<Action> = this.actions$.ofType(PersonActions.LOAD_PERSON_LIST)
+  @Effect() loadAuthors$: Observable<Action> = this.actions$.ofType(AuthorActions.LOAD_AUTHOR_LIST)
     .mergeMap(action =>
       of([
           {
@@ -32,8 +32,8 @@ export class PeopleEffects {
       ])
     //   this.http.post('/auth', action.payload)
         // If successful, dispatch success action with result
-        .map(data => ({ type: PersonActions.LOAD_PERSON_LIST_SUCCESS, payload: data }))
+        .map(data => ({ type: AuthorActions.LOAD_AUTHOR_LIST_SUCCESS, payload: data }))
         // If request fails, dispatch failed action
-        .catch(() => of({ type: PersonActions.LOAD_PERSON_LIST_ERROR }))
+        .catch(() => of({ type: AuthorActions.LOAD_AUTHOR_LIST_ERROR }))
     );
 }

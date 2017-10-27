@@ -3,17 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { routing } from './person.route'
-import { PersonComponent } from './person.component';
-import { PersonListComponent } from './person-list//person-list.component';
-import { PersonActions} from './actions/';
+import { routing } from './author.route'
+import { AuthorComponent } from './author.component';
+import { AuthorListComponent } from './author-list//author-list.component';
+import { AuthorActions} from './actions/';
 import { PeopleEffects} from './effects/';
 
 
 @NgModule({
   declarations: [
-    PersonComponent,
-    PersonListComponent
+    AuthorComponent,
+    AuthorListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +21,7 @@ import { PeopleEffects} from './effects/';
     EffectsModule.run(PeopleEffects),
   ],
   providers: [
-    PersonActions
+    AuthorActions
   ],
 })
-export class PersonModule { }
+export class AuthorModule { }

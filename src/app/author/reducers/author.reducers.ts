@@ -1,9 +1,9 @@
 import { Action, ActionReducer } from '@ngrx/store';
 
-import { PersonActions } from '../actions';
+import { AuthorActions } from '../actions';
 
 export interface PeopleState {
-    entities: Person[];
+    entities: Author[];
     loading: boolean;
     counter: number;
 }
@@ -17,22 +17,22 @@ const initialState: PeopleState = {
 export default (state = initialState, action: Action): PeopleState => {
     switch (action.type) {
 
-        case PersonActions.INCREMENT_COUNTER: {
+        case AuthorActions.INCREMENT_COUNTER: {
             let newCount = state.counter;
             newCount++;
             return Object.assign({}, state, { counter: newCount });
         }
 
-        case PersonActions.LOAD_PERSON_LIST_SUCCESS: {
-            const persons: any[] = action.payload;
+        case AuthorActions.LOAD_AUTHOR_LIST_SUCCESS: {
+            const authors: any[] = action.payload;
 
             return Object.assign({}, state, {
-                entities: [...state.entities, ...persons],
+                entities: [...state.entities, ...authors],
                 loading: false
             });
         }
 
-        case PersonActions.LOAD_PERSON_LIST: {
+        case AuthorActions.LOAD_AUTHOR_LIST: {
             return state;
         }
 
@@ -44,18 +44,18 @@ export default (state = initialState, action: Action): PeopleState => {
 }
 
 
-// export default (state = initialState, action: Action) : ActionReducer<PersonsState>=> {
+// export default (state = initialState, action: Action) : ActionReducer<AuthorsState>=> {
 //     switch (action.type) {
 
-//         case PersonActions.LOAD_PERSON_LIST: {
+//         case AuthorActions.LOAD_AUTHOR_LIST: {
 //             return Object.assign({}, state, { loading: true });
 //         }
 
-//         case PersonActions.LOAD_PERSON_LIST_SUCCESS: {
-//             const persons: any[] = action.payload;
+//         case AuthorActions.LOAD_AUTHOR_LIST_SUCCESS: {
+//             const authors: any[] = action.payload;
 
 //             return Object.assign({}, state, {
-//               entities: Object.assign({}, state.entities, persons),
+//               entities: Object.assign({}, state.entities, authors),
 //               loading: false
 //             });
 //           }

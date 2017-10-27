@@ -1,4 +1,4 @@
-import { PeopleEffects } from './people.effects';
+import { PeopleEffects } from './author.effects';
 
 export {
     PeopleEffects
