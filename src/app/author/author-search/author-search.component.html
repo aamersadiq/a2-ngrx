@@ -1,1 +1,1 @@
-<input type="search" />
+<input #search type="search" (keyup)="searchTerm$.next($event.target.value)" />
