@@ -4,13 +4,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthorActions {
     
-      static INCREMENT_COUNTER = '[Author] Increment Counter';
-      public incrementCounter(): Action {
-        return {
-          type: AuthorActions.INCREMENT_COUNTER
-        };
-      }
-      
       static LOAD_AUTHOR_LIST = '[Author] Load Author List';
       loadAuthorList(): Action {
         return {

@@ -1,11 +1,12 @@
 import { combineReducers, Action, ActionReducer } from '@ngrx/store';
 
-import peopleReducer, * as fromPeople from './author.reducers';
+import authorListReducer, * as fromAuthorList from './author-list.reducers';
 
 export interface AuthorState {
-    people: fromPeople.PeopleState;
+    authorList: fromAuthorList.AuthorListState;
+    // auther: Author
 }
 
 export default combineReducers({
-    people: peopleReducer
+    authorList: authorListReducer
 });

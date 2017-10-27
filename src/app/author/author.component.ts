@@ -1,5 +1,4 @@
-import { PeopleState } from './reducers/author.reducers';
-import { AuthorState } from './reducers/index';
+import { AuthorListState } from './reducers/author-list.reducers';
 import { subscribeOn } from 'rxjs/operators/subscribeOn';
 import 'rxjs/add/operator/do';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -24,9 +23,9 @@ export class AuthorComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.people$ = this.store.select(state => state.author.people)
-    .do((people: PeopleState) => this.isLoading = people.loading)
-    .map(data => data.entities);
+    this.people$ = this.store.select((state: AppState) => state.author.authorList)
+    .do((people: AuthorListState) => this.isLoading = people.loading)
+    .map(data => data.authors);
     this.store.dispatch(this.authorActions.loadAuthorList());
   }
 
