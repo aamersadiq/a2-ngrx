@@ -2,18 +2,28 @@ import { Action, ActionReducer } from '@ngrx/store';
 
 import { AuthorActions } from '../actions';
 
+export enum AuthorSortBy {
+    id,
+    firstName,
+    LastName
+}
+
 export interface AuthorListState {
     authors: Author[];
-    filteredAuthors: Author[];
+    displayedItems: Author[];
     searchText: string;
     loading: boolean;
+    sortBy: AuthorSortBy;
+    isAscending: boolean;
 }
 
 const initialState: AuthorListState = {
     authors: [],
-    filteredAuthors: [],
+    displayedItems: [],
     searchText: '',
     loading: true,
+    sortBy: AuthorSortBy.id,
+    isAscending: true // https://www.wintellect.com/using-redux-manage-angular2-application-state/
 };
 
 export default (state: AuthorListState = initialState, action: Action): AuthorListState => {
@@ -24,7 +34,7 @@ export default (state: AuthorListState = initialState, action: Action): AuthorLi
 
             return Object.assign({}, state, {
                 authors,
-                filteredAuthors: authors,
+                displayedItems: authors,
                 loading: false
             });
         }
@@ -44,7 +54,7 @@ export default (state: AuthorListState = initialState, action: Action): AuthorLi
             }
             return Object.assign({}, state, {
                 searchText: searchTerm,
-                filteredAuthors: filtered
+                displayedItems: filtered
                 
             });
         }
