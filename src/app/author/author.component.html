@@ -1,2 +1,2 @@
-<app-author-search></app-author-search>
+<app-author-search (searchTerm)="searchTerm($event)"></app-author-search>
 <app-author-list [people]="people$ | async"></app-author-list>

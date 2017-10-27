@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
@@ -11,16 +11,18 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./author-search.component.css']
 })
 export class AuthorSearchComponent implements OnInit, OnDestroy {
+  @Output() searchTerm = new EventEmitter<string>();
+  searchTerm$ = new Subject<string>();
+  
   constructor() {
 
   }
 
-  searchTerm$ = new Subject<string>();
 
   ngOnInit() {
     this.searchTerm$.debounceTime(400)
     .distinctUntilChanged()
-    .subscribe((data) => console.log('key', data));
+    .subscribe((data: string) => this.searchTerm.emit(data));
   }
 
   ngOnDestroy() {

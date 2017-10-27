@@ -29,6 +29,10 @@ export class AuthorComponent implements OnInit, OnDestroy {
     this.store.dispatch(this.authorActions.loadAuthorList());
   }
 
+  searchTerm(term: string) {
+    console.log('searchTerm', term);
+  }
+
   ngOnDestroy() {
     
   }
