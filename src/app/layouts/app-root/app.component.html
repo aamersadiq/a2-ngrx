@@ -1,7 +1,9 @@
-<nav>
-  <a routerLink="authors">Authors</a>
-  <a routerLink="courses">Courses</a>
-</nav>
+<mat-toolbar color="primary">
+  <ul>
+    <li><a routerLink="authors" routerLinkActive="active">Authors</a></li>
+    <li><a routerLink="courses" routerLinkActive="active">Courses</a></li>
+  </ul>
+</mat-toolbar>
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>

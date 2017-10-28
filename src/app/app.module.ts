@@ -11,7 +11,7 @@ import reducer from './reducers';
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
 import { AuthorModule } from './author' 
-
+import { SharedModule } from './shared/shared.module'
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { AuthorModule } from './author'
   imports: [
     routing,
     BrowserModule,
+    SharedModule,
     AuthorModule,
     StoreModule.provideStore(reducer),
     // StoreDevtoolsModule.instrumentStore({
