@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { SharedModule} from '../shared/shared.module'
 import { routing } from './author.route'
 import { AuthorComponent } from './author.component';
 import { AuthorListComponent } from './author-list//author-list.component';
@@ -19,6 +20,7 @@ import { PeopleEffects} from './effects/';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     routing,
     EffectsModule.run(PeopleEffects),
   ],
