@@ -44,13 +44,14 @@ export default (state: AuthorListState = initialState, action: Action): AuthorLi
         }
 
         case AuthorActions.SEARCH_AUTHOR_LIST: {
-            const searchTerm = action.payload;
+            const searchTerm: string = action.payload;
             let filtered;
             if (!searchTerm) {
                 filtered = state.authors;
             }
             else {
-                filtered = state.authors.filter((author) => (author.firstName + author.lastName).includes(searchTerm));
+                filtered = state.authors.filter((author) => author.firstName.toUpperCase().includes(searchTerm.toUpperCase())
+                || author.lastName.toUpperCase().includes(searchTerm.toUpperCase()));
             }
             return Object.assign({}, state, {
                 searchText: searchTerm,
