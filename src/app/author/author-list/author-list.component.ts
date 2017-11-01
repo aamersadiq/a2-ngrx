@@ -51,7 +51,6 @@ export class ExampleDataSource extends DataSource<any> {
     ];
 
     this.sortSubscription = this.sort.sortChange.subscribe((st) => {
-      console.log('sort', st)
       this.sortAuthors.emit({
         sortBy: st.active,
         isAscending: st.direction === 'asc'

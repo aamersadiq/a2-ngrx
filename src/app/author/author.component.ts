@@ -24,12 +24,12 @@ export class AuthorComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authors$ = this.store.select((state: AppState) => state.author.authorList)
-    .do((people: AuthorListState) => this.isLoading = people.loading)
+    .do((author: AuthorListState) => this.isLoading = author.loading)
     .map(data => data.displayedItems);
     this.store.dispatch(this.authorActions.loadAuthorList());
   }
 
-  searchTerm(term: string) {
+  searchAuthors(term: string) {
     this.store.dispatch(this.authorActions.searchAuthorList(term));
   }
   

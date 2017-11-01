@@ -11,7 +11,7 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./author-search.component.css']
 })
 export class AuthorSearchComponent implements OnInit, OnDestroy {
-  @Output() searchTerm = new EventEmitter<string>();
+  @Output() searchAuthors = new EventEmitter<string>();
   searchTerm$ = new Subject<string>();
   
   constructor() {
@@ -22,7 +22,7 @@ export class AuthorSearchComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.searchTerm$.debounceTime(400)
     .distinctUntilChanged()
-    .subscribe((data: string) => this.searchTerm.emit(data));
+    .subscribe((data: string) => this.searchAuthors.emit(data));
   }
 
   ngOnDestroy() {
