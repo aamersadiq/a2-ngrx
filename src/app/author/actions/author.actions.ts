@@ -34,4 +34,12 @@ export class AuthorActions {
           payload: term
         };
       }
+      
+      static SORT_AUTHOR_LIST = '[Author] Sort Author List';
+      sortAuthorList(sort: Sort): Action {
+        return {
+          type: AuthorActions.SORT_AUTHOR_LIST,
+          payload: sort
+        };
+      }
     }

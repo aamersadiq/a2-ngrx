@@ -1,11 +1,12 @@
 import { Action, ActionReducer } from '@ngrx/store';
+import * as _ from 'lodash';
 
 import { AuthorActions } from '../actions';
 
-export enum AuthorSortBy {
+enum AuthorSortBy {
     id,
     firstName,
-    LastName
+    lastName
 }
 
 export interface AuthorListState {
@@ -45,17 +46,28 @@ export default (state: AuthorListState = initialState, action: Action): AuthorLi
 
         case AuthorActions.SEARCH_AUTHOR_LIST: {
             const searchTerm: string = action.payload;
-            let filtered;
-            if (!searchTerm) {
-                filtered = state.authors;
-            }
-            else {
-                filtered = state.authors.filter((author) => author.firstName.toUpperCase().includes(searchTerm.toUpperCase())
-                || author.lastName.toUpperCase().includes(searchTerm.toUpperCase()));
-            }
             return Object.assign({}, state, {
                 searchText: searchTerm,
-                displayedItems: filtered
+                displayedItems: getDisplayedItems({
+                    dataSet: state.authors,
+                    sortBy: state.sortBy,
+                    isAscending: state.isAscending,
+                    searchTerm: searchTerm,
+                })
+                
+            });
+        }
+        
+        case AuthorActions.SORT_AUTHOR_LIST: {
+            return Object.assign({}, state, {
+                sortBy: action.payload.sortBy,
+                isAscending: action.payload.isAscending,
+                displayedItems: getDisplayedItems({
+                    dataSet: state.authors,
+                    searchTerm: state.searchText,                    
+                    sortBy: action.payload.sortBy,
+                    isAscending: action.payload.isAscending
+                })
                 
             });
         }
@@ -63,6 +75,29 @@ export default (state: AuthorListState = initialState, action: Action): AuthorLi
         default: {
             return state;
         }
-
     }
+}
+
+function getDisplayedItems(options) {
+    options.searchTerm = options.searchTerm || '';
+    options.isAscending = options.isAscending === undefined ? true : options.isAscending;
+    options.sortBy = options.sortBy || AuthorSortBy.id;
+    let sortOperator: any;
+    switch (options.sortBy) {
+        case AuthorSortBy[AuthorSortBy.firstName]:
+            sortOperator = (a: Author) => a.firstName
+            break
+        case AuthorSortBy[AuthorSortBy.lastName]:
+            sortOperator = (a: Author) => a.lastName
+            break
+        default:
+            sortOperator = (a: Author) => a.id
+            break
+    }
+
+    return _(options.dataSet)
+        .filter((aut: Author) => aut.firstName.toUpperCase().includes(options.searchTerm.toUpperCase())
+        || aut.lastName.toUpperCase().includes(options.searchTerm.toUpperCase()))
+         .orderBy([sortOperator], [options.isAscending ? 'asc' : 'desc'])
+        .value()
 }

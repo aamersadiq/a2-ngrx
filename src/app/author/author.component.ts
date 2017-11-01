@@ -15,7 +15,7 @@ import { AppState } from '../reducers'
   styleUrls: ['./author.component.css']
 })
 export class AuthorComponent implements OnInit, OnDestroy {
-  people$: Observable<any>;
+  authors$: Observable<any>;
   isLoading: boolean = true;
   constructor(
     private authorActions: AuthorActions,
@@ -23,7 +23,7 @@ export class AuthorComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.people$ = this.store.select((state: AppState) => state.author.authorList)
+    this.authors$ = this.store.select((state: AppState) => state.author.authorList)
     .do((people: AuthorListState) => this.isLoading = people.loading)
     .map(data => data.displayedItems);
     this.store.dispatch(this.authorActions.loadAuthorList());
@@ -31,6 +31,11 @@ export class AuthorComponent implements OnInit, OnDestroy {
 
   searchTerm(term: string) {
     this.store.dispatch(this.authorActions.searchAuthorList(term));
+  }
+  
+  sortAuthors(sort: Sort) {
+    console.log('author', sort)
+    this.store.dispatch(this.authorActions.sortAuthorList(sort));
   }
 
   ngOnDestroy() {
