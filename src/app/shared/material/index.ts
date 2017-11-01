@@ -31,8 +31,9 @@ import { MatAutocompleteModule,
   MatTooltipModule,
   MatStepperModule, } from '@angular/material';
 
+export const materialAnimationModules = [BrowserAnimationsModule];
+
 export const material = [
-  BrowserAnimationsModule,
   MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,

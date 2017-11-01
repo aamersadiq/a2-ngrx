@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { SharedModule} from '../shared/shared.module'
 import { routing } from './author.route'
@@ -20,7 +20,7 @@ import { services } from './effects'
     AuthorSearchComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     SharedModule,
     routing,
     EffectsModule.run(AuthorEffects),

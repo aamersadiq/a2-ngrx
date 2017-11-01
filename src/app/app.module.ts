@@ -12,6 +12,7 @@ import reducer from './reducers';
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
 import { AuthorModule } from './author' 
+import { materialAnimationModules } from './shared/material/index'
 import { SharedModule } from './shared/shared.module'
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SharedModule } from './shared/shared.module'
     routing,
     HttpModule,
     BrowserModule,
+    materialAnimationModules,
     SharedModule,
     AuthorModule,
     StoreModule.provideStore(reducer),
