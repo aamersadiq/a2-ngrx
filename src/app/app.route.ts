@@ -12,7 +12,11 @@ export const routes: Routes = [
         redirectTo: '/authors',
         pathMatch: 'full'
     },
-    // { path: '**', component: PageNotFoundComponent }
+    {
+        path: '**',
+        redirectTo: '/authors',
+        pathMatch: 'full'
+    }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {

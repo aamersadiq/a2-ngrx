@@ -9,6 +9,6 @@ export interface AppState {
     author: fromAuthor.AuthorState;
 }
 
-export default compose(storeFreeze, storeLogger(),combineReducers)({
+export default compose(storeFreeze, storeLogger(), combineReducers)({
     author: authorReducer
 });

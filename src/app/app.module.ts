@@ -2,10 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { useLogMonitor } from '@ngrx/store-log-monitor';
-import { RouterStoreModule } from '@ngrx/router-store';
 import { HttpModule } from '@angular/http'
 
 import reducer from './reducers';
@@ -26,14 +22,7 @@ import { SharedModule } from './shared/shared.module'
     materialAnimationModules,
     SharedModule,
     AuthorModule,
-    StoreModule.provideStore(reducer),
-    // StoreDevtoolsModule.instrumentStore({
-    //   monitor: useLogMonitor({
-    //     position: 'right',
-    //     visible: true
-    //   })
-    // }),
-    // RouterStoreModule.connectRouter(),
+    StoreModule.provideStore(reducer)
   ],
   providers: [],
   bootstrap: [AppComponent]
