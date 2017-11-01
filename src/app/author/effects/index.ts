@@ -1,9 +1,14 @@
-import { PeopleEffects } from './author.effects';
+import { AuthorEffects } from './author.effects';
+import { AuthorService } from './author.service';
 
-export {
-    PeopleEffects
-};
+export * from './author.effects';
+export * from './author.service';
 
-export default [
-    PeopleEffects
+
+export const services =  [
+    AuthorService
+];
+
+export const effects =  [
+    AuthorEffects
 ];

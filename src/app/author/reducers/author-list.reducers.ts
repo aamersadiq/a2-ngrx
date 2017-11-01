@@ -24,7 +24,7 @@ const initialState: AuthorListState = {
     searchText: '',
     loading: true,
     sortBy: AuthorSortBy.id,
-    isAscending: true // https://www.wintellect.com/using-redux-manage-angular2-application-state/
+    isAscending: true 
 };
 
 export default (state: AuthorListState = initialState, action: Action): AuthorListState => {

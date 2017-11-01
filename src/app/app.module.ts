@@ -6,8 +6,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { useLogMonitor } from '@ngrx/store-log-monitor';
 import { RouterStoreModule } from '@ngrx/router-store';
-import reducer from './reducers';
+import { HttpModule } from '@angular/http'
 
+import reducer from './reducers';
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
 import { AuthorModule } from './author' 
@@ -19,6 +20,7 @@ import { SharedModule } from './shared/shared.module'
   ],
   imports: [
     routing,
+    HttpModule,
     BrowserModule,
     SharedModule,
     AuthorModule,

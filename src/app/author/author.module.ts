@@ -9,7 +9,8 @@ import { AuthorComponent } from './author.component';
 import { AuthorListComponent } from './author-list//author-list.component';
 import { AuthorSearchComponent } from './author-search/author-search.component';
 import { AuthorActions} from './actions/';
-import { PeopleEffects} from './effects/';
+import { AuthorEffects } from './effects/';
+import { services } from './effects'
 
 
 @NgModule({
@@ -22,10 +23,11 @@ import { PeopleEffects} from './effects/';
     BrowserModule,
     SharedModule,
     routing,
-    EffectsModule.run(PeopleEffects),
+    EffectsModule.run(AuthorEffects),
   ],
   providers: [
-    AuthorActions
+    AuthorActions,
+    services
   ],
 })
 export class AuthorModule { }
