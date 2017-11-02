@@ -29,14 +29,14 @@ export class AuthorListComponent implements OnInit, OnDestroy {
   
   ngOnInit() {
     this.displayedColumns = ['id', 'firstName', 'lastName'];
-    this.dataSource = new ExampleDataSource(this.authors, this.sort, this.sortAuthors);
+    this.dataSource = new AuthorDataSource(this.authors, this.sort, this.sortAuthors);
   }
 
   ngOnDestroy() {
   }
 }
 
-export class ExampleDataSource extends DataSource<any> {
+export class AuthorDataSource extends DataSource<any> {
   sortSubscription: Subscription;
   constructor(private data: Observable<Author[]>, private sort: MatSort, 
     private sortAuthors: EventEmitter<Sort>) {
