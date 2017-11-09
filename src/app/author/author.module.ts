@@ -8,7 +8,6 @@ import { routing } from './author.route'
 import { AuthorComponent } from './author.component';
 import { AuthorListComponent } from './author-list//author-list.component';
 import { AuthorSearchComponent } from './author-search/author-search.component';
-import { AuthorActions} from './actions/';
 import { AuthorEffects } from './effects/';
 import { services } from './effects'
 
@@ -23,10 +22,9 @@ import { services } from './effects'
     CommonModule,
     SharedModule,
     routing,
-    EffectsModule.run(AuthorEffects),
+    EffectsModule.forRoot([AuthorEffects]),
   ],
   providers: [
-    AuthorActions,
     services
   ],
 })

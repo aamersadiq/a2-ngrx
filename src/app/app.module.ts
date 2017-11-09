@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { HttpModule } from '@angular/http'
 
-import reducer from './reducers';
+import { reducers, metaReducers } from './reducers';
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
 import { AuthorModule } from './author' 
@@ -22,7 +22,7 @@ import { SharedModule } from './shared/shared.module'
     materialAnimationModules,
     SharedModule,
     AuthorModule,
-    StoreModule.provideStore(reducer)
+    StoreModule.forRoot(reducers, { metaReducers }),
   ],
   providers: [],
   bootstrap: [AppComponent]

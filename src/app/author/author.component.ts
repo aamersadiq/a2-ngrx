@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { AuthorActions } from './actions';
+import * as authorActions from './actions';
 import { AppState } from '../reducers'
 
 @Component({
@@ -18,7 +18,6 @@ export class AuthorComponent implements OnInit, OnDestroy {
   authors$: Observable<any>;
   isLoading: boolean = true;
   constructor(
-    private authorActions: AuthorActions,
     private store: Store<AppState>) {
   }
 
@@ -26,16 +25,16 @@ export class AuthorComponent implements OnInit, OnDestroy {
     this.authors$ = this.store.select((state: AppState) => state.author.authorList)
     .do((author: AuthorListState) => this.isLoading = author.loading)
     .map(data => data.displayedItems);
-    this.store.dispatch(this.authorActions.loadAuthorList());
+    this.store.dispatch(new authorActions.LoadAuthorList());
   }
 
   searchAuthors(term: string) {
-    this.store.dispatch(this.authorActions.searchAuthorList(term));
+    this.store.dispatch(new authorActions.SearchAuthorList(term));
   }
   
   sortAuthors(sort: Sort) {
     console.log('author', sort)
-    this.store.dispatch(this.authorActions.sortAuthorList(sort));
+    this.store.dispatch(new authorActions.SortAuthorList(sort));
   }
 
   ngOnDestroy() {

@@ -8,7 +8,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
 
 import { AuthorService } from './author.service';
-import { AuthorActions } from '../actions';
+import * as authorActions from '../actions';
 
 @Injectable()
 export class AuthorEffects {
@@ -17,10 +17,10 @@ export class AuthorEffects {
     private actions$: Actions
   ) { }
 
-  @Effect() loadAuthors$: Observable<Action> = this.actions$.ofType(AuthorActions.LOAD_AUTHOR_LIST)
+  @Effect() loadAuthors$: Observable<Action> = this.actions$.ofType(authorActions.LOAD_AUTHOR_LIST)
     .mergeMap(action =>
       this.authorService.getAll()
-        .map(data => ({ type: AuthorActions.LOAD_AUTHOR_LIST_SUCCESS, payload: data }))
-        .catch(() => of({ type: AuthorActions.LOAD_AUTHOR_LIST_ERROR }))
+        .map(data => ({ type: authorActions.LOAD_AUTHOR_LIST_SUCCESS, payload: data }))
+        .catch(() => of({ type: authorActions.LOAD_AUTHOR_LIST_ERROR }))
     );
 }

@@ -1,7 +1,7 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import * as _ from 'lodash';
 
-import { AuthorActions } from '../actions';
+import * as authorActions from '../actions';
 
 enum AuthorSortBy {
     id,
@@ -27,10 +27,10 @@ const initialState: AuthorListState = {
     isAscending: true 
 };
 
-export default (state: AuthorListState = initialState, action: Action): AuthorListState => {
+export default (state: AuthorListState = initialState, action: authorActions.All): AuthorListState => {
     switch (action.type) {
 
-        case AuthorActions.LOAD_AUTHOR_LIST_SUCCESS: {
+        case authorActions.LOAD_AUTHOR_LIST_SUCCESS: {
             const authors: any[] = action.payload;
 
             return Object.assign({}, state, {
@@ -40,11 +40,11 @@ export default (state: AuthorListState = initialState, action: Action): AuthorLi
             });
         }
 
-        case AuthorActions.LOAD_AUTHOR_LIST: {
+        case authorActions.LOAD_AUTHOR_LIST: {
             return state;
         }
 
-        case AuthorActions.SEARCH_AUTHOR_LIST: {
+        case authorActions.SEARCH_AUTHOR_LIST: {
             const searchTerm: string = action.payload;
             return Object.assign({}, state, {
                 searchText: searchTerm,
@@ -58,7 +58,7 @@ export default (state: AuthorListState = initialState, action: Action): AuthorLi
             });
         }
         
-        case AuthorActions.SORT_AUTHOR_LIST: {
+        case authorActions.SORT_AUTHOR_LIST: {
             return Object.assign({}, state, {
                 sortBy: action.payload.sortBy,
                 isAscending: action.payload.isAscending,
