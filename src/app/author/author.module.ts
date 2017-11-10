@@ -8,8 +8,8 @@ import { routing } from './author.route'
 import { AuthorComponent } from './author.component';
 import { AuthorListComponent } from './author-list//author-list.component';
 import { AuthorSearchComponent } from './author-search/author-search.component';
-import { AuthorEffects } from './effects/';
-import { services } from './effects'
+import { AuthorEffects } from './store';
+import { services } from './store'
 
 
 @NgModule({

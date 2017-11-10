@@ -1,7 +1,7 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import * as _ from 'lodash';
 
-import * as authorActions from '../actions';
+import * as authorActions from './author.actions';
 
 enum AuthorSortBy {
     id,

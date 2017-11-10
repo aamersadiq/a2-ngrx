@@ -5,7 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { HttpModule } from '@angular/http'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './core/store/meta.reducer';
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
 import { AuthorModule } from './author' 

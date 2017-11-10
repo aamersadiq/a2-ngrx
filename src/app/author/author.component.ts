@@ -1,4 +1,3 @@
-import { AuthorListState } from './reducers/author-list.reducers';
 import { subscribeOn } from 'rxjs/operators/subscribeOn';
 import 'rxjs/add/operator/do';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -6,8 +5,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import * as authorActions from './actions';
-import { AppState } from '../reducers'
+import * as authorActions from './store';
+import { AppState } from '../core/store/meta.reducer'
 
 @Component({
   selector: 'app-author',
@@ -23,7 +22,7 @@ export class AuthorComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authors$ = this.store.select((state: AppState) => state.author.authorList)
-    .do((author: AuthorListState) => this.isLoading = author.loading)
+    .do((author: any) => this.isLoading = author.loading)
     .map(data => data.displayedItems);
     this.store.dispatch(new authorActions.LoadAuthorList());
   }

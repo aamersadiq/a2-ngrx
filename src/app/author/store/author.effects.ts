@@ -8,7 +8,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
 
 import { AuthorService } from './author.service';
-import * as authorActions from '../actions';
+import * as authorActions from './author.actions';
 
 @Injectable()
 export class AuthorEffects {
