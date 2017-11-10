@@ -9,7 +9,7 @@ enum AuthorSortBy {
     lastName
 }
 
-export interface AuthorListState {
+export interface AuthorState {
     authors: Author[];
     displayedItems: Author[];
     searchText: string;
@@ -18,7 +18,7 @@ export interface AuthorListState {
     isAscending: boolean;
 }
 
-const initialState: AuthorListState = {
+const initialState: AuthorState = {
     authors: [],
     displayedItems: [],
     searchText: '',
@@ -27,7 +27,7 @@ const initialState: AuthorListState = {
     isAscending: true 
 };
 
-export default (state: AuthorListState = initialState, action: authorActions.All): AuthorListState => {
+export default (state: AuthorState = initialState, action: authorActions.All): AuthorState => {
     switch (action.type) {
 
         case authorActions.LOAD_AUTHOR_LIST_SUCCESS: {

@@ -1,4 +1,4 @@
-import authorReducer, * as fromAuthor from '../../author/store';
+import authorReducer, * as fromAuthor from '../../author/store/author.reducers';
 import { ActionReducer, ActionReducerMap, MetaReducer, } from '@ngrx/store';
 import { storeLogger } from 'ngrx-store-logger';
 import { storeFreeze } from 'ngrx-store-freeze';
