@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule} from '../shared/shared.module'
+import { MaterialModule } from '../blocks/material'
 import { routing } from './author.route'
 import { AuthorComponent } from './author.component';
 import { AuthorListComponent } from './author-list//author-list.component';
@@ -20,7 +20,7 @@ import { services } from './store'
   ],
   imports: [
     CommonModule,
-    SharedModule,
+    MaterialModule,
     routing,
     EffectsModule.forRoot([AuthorEffects]),
   ],

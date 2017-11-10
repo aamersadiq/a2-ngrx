@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import * as authorActions from './store';
-import { AppState } from '../core/store/meta.reducer'
+import { AppState } from '../shared/store/meta.reducer'
 
 @Component({
   selector: 'app-author',

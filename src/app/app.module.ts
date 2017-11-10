@@ -5,13 +5,13 @@ import { StoreModule } from '@ngrx/store';
 import { HttpModule } from '@angular/http'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { reducers, metaReducers } from './core/store/meta.reducer';
+import { MaterialModule } from './blocks/material'
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
 import { AuthorModule } from './author' 
-import { materialAnimationModules } from './shared/material/index'
+import { materialAnimationModules } from './blocks/material'
 import { SharedModule } from './shared/shared.module'
-import { environment } from '@env/environment';
+
 
 @NgModule({
   declarations: [
@@ -22,12 +22,9 @@ import { environment } from '@env/environment';
     HttpModule,
     BrowserModule,
     materialAnimationModules,
+    MaterialModule,
     SharedModule,
     AuthorModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument({
-      maxAge: 25 //  Retains last 25 states
-    }) : [ ]
   ],
   providers: [],
   bootstrap: [AppComponent]
