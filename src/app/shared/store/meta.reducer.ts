@@ -1,16 +1,16 @@
 import authorReducer, * as fromAuthor from '../../author/store/author.reducers';
-import { ActionReducer, ActionReducerMap, MetaReducer, } from '@ngrx/store';
+import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { storeLogger } from 'ngrx-store-logger';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { environment } from '@env/environment';
 
 export interface AppState {
-  author: fromAuthor.AuthorState;
+  authors: fromAuthor.AuthorState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  author: authorReducer
+  authors: authorReducer
 };
 
 export function logger(reducer: ActionReducer<AppState>): any {

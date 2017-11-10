@@ -7,23 +7,24 @@ import { Subscription } from 'rxjs/Subscription';
 
 import * as authorActions from './store/author.actions';
 import { AppState } from '../shared/store/meta.reducer'
+import { getDisplayedItemsState, getLoadingState } from './store/author.reducers'
 
 @Component({
   selector: 'app-author',
   templateUrl: './author.component.html',
   styleUrls: ['./author.component.css']
 })
+
 export class AuthorComponent implements OnInit, OnDestroy {
-  authors$: Observable<any>;
-  isLoading: boolean = true;
+  authors$: Observable<Author[]>;
+  isLoading$: Observable<boolean>;
   constructor(
     private store: Store<AppState>) {
   }
 
   ngOnInit() {
-    this.authors$ = this.store.select((state: AppState) => state.author)
-    .do((author: any) => this.isLoading = author.loading)
-    .map(data => data.displayedItems);
+    this.authors$ = this.store.select(getDisplayedItemsState);
+    this.isLoading$ = this.store.select(getLoadingState);
     this.store.dispatch(new authorActions.LoadAuthorList());
   }
 
