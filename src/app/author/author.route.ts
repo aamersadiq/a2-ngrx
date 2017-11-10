@@ -3,12 +3,12 @@ import { ModuleWithProviders } from '@angular/core';
 
 import { AuthorComponent } from './author.component';
 
-export const routes: Routes = [
+  export const routes: Routes = [
     {
-        path: 'authors',
+        path: '',
         component: AuthorComponent,
         data: { title: 'Authors' }
     }
   ];
 
-  export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+  export const routing: ModuleWithProviders = RouterModule.forChild(routes);

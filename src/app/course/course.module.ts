@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule} from '../shared/shared.module'
+import { MaterialModule } from '../blocks/material'
 import { routing } from './course.route'
 import { CourseComponent } from './course.component';
 
@@ -14,7 +14,7 @@ import { CourseComponent } from './course.component';
   imports: [
     routing,
     CommonModule,
-    SharedModule
+    MaterialModule
   ],
   providers: [],
 })

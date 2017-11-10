@@ -8,7 +8,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from './blocks/material'
 import { AppComponent } from './layouts';
 import { routing } from './app.route'
-import { AuthorModule } from './author' 
 import { materialAnimationModules } from './blocks/material'
 import { SharedModule } from './shared/shared.module'
 
@@ -23,8 +22,7 @@ import { SharedModule } from './shared/shared.module'
     BrowserModule,
     materialAnimationModules,
     MaterialModule,
-    SharedModule,
-    AuthorModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
