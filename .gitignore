@@ -15,11 +15,6 @@ typings/
 !**/src/typings/*.d.ts
 stats.json
 
-## Bank Reconciliation
-bank-reconciliation/typings/
-bank-reconciliation/src/**/*.js
-!bank-reconciliation/src/**/*.spec.js
-
 # Visual Studio
 .settings/
 .ntvs_analysis.dat
